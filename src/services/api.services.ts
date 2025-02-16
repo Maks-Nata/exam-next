@@ -1,7 +1,7 @@
 import { IUser } from "@/models/user";
 import {IRecipe} from "@/models/recipe";
 
-const BASE_URL = "https://dummyjson.com";
+export const BASE_URL = "https://dummyjson.com";
 
 
 export async function getUsers(limit = 20, skip = 0): Promise<{users:IUser[],total: number}> {
@@ -17,3 +17,13 @@ export async function getRecipes(limit = 10, skip = 0): Promise<{ recipes: IReci
     return { recipes: data.recipes, total: data.total };
 }
 
+export async function getUserById(id: number): Promise<IUser | null> {
+    const response = await fetch(`${BASE_URL}/users/${id}`);
+    if (!response.ok) return null; // Если пользователь не найден, вернуть null
+    return await response.json();
+}
+export async function getRecipeById(id: number): Promise<IRecipe | null> {
+    const response = await fetch(`${BASE_URL}/recipes/${id}`);
+    if (!response.ok) return null; // Если рецепт не найден, вернуть null
+    return await response.json();
+}

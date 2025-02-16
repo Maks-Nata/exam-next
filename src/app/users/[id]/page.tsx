@@ -1,25 +1,17 @@
+import { getUserById } from "@/services/api.services";
 import { UserComponent } from "@/components/UserComponent";
-import { IUser } from "@/models/user";
-import { FC } from "react";
-import {SearchParams} from "next/dist/server/request/search-params";
 
-type Props={
-    params:Promise<{id:string}>;
-    searchParams:Promise<SearchParams>
-}
+type Props = {
+    params: { id: string };
+};
 
-
-
-const UserPage: FC<Props> =async ({searchParams}) => {
-
-    let user:IUser|null=null
-    const{data}=await searchParams
-    if (typeof data==='string'){
-        user=JSON.parse(data) as IUser
-      }
+const UserPage = async ({ params }: Props) => {
+    const user = await getUserById(Number(params.id));
 
     return (
-        <UserComponent user={user}/>
+        <div>
+            <UserComponent user={user} />
+        </div>
     );
 };
 

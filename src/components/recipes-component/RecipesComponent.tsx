@@ -19,10 +19,10 @@ export default async function RecipesComponent({ searchParams }: Props) {
         <div>
             <h1>Список рецептів</h1>
             {recipes.map((recipe: IRecipe) => (
-                <div key={recipe.id}>
-                    <h3>{recipe.name}</h3>
+                <ul key={recipe.id}>
+                 <Link href={`/recipes/${recipe.id}`} ><li>{recipe.name}</li></Link>
                     <img src={recipe.image} alt={recipe.name} width="100" />
-                </div>
+                </ul>
             ))}
             <div>
                 {page > 1 && (

@@ -1,4 +1,4 @@
-import RecipesComponent from "@/components/RecipesComponent";
+import RecipesComponent from "@/components/recipes-component/RecipesComponent";
 import Menu from "@/components/Menu";
 
 export default function RecipesPage({ searchParams }: { searchParams: { page?: string } }) {
