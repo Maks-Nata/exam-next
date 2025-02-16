@@ -1,16 +1,12 @@
 import Menu from "@/components/Menu";
 import UsersComponent from "@/components/UsersComponent";
 
-
-export default async function UsersPage() {
-
-
+export default function UsersPage({ searchParams }: { searchParams: { page?: string } }) {
     return (
         <div>
-            <div><Menu/></div>
-            <hr/>
-            <UsersComponent/>
-
+            <Menu />
+            <hr />
+            <UsersComponent searchParams={searchParams} />
         </div>
     );
 }
