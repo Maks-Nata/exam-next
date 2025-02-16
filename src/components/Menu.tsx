@@ -8,7 +8,7 @@
         return (
             <div>
                 <nav>
-                    <Link href="https://dummyjson.com/recipes">Усі рецепти</Link>
+                    <Link href="/recipes">Усі рецепти</Link>
                     <Link href="/users">Усі користувачі</Link>
                     <Link href="/">Вийти</Link>
 
