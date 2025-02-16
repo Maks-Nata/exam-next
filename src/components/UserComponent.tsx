@@ -12,7 +12,7 @@ export const UserComponent: FC<UserComponentProps> = ({ user }) => {
             {user ? (
                 <>
                     <h2>Більш детальна інформація о користувачеві</h2>
-                    <img src={user.image} alt={user.firstName} width="50"/>
+                    <img src={user.image} alt={user.firstName} width="100"/>
                     <p>Імя: {user.firstName}</p>
                     <p>Прізвище: {user.lastName}</p>
                     <p>По батькові: {user.maidenName}</p>
