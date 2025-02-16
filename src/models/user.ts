@@ -6,4 +6,6 @@ export interface IUser {
     age: number;
     birthDate: string;
     gender: string;
+    image: string;
+    email:string
 }
