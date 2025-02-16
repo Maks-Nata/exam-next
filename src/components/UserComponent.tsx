@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { IUser } from "@/models/user";
-import { FC } from "react";
+import {IUser} from "@/models/user";
+import {FC} from "react";
 
 interface UserComponentProps {
     user: IUser | null;
@@ -10,6 +10,7 @@ export const UserComponent: FC<UserComponentProps> = ({ user }) => {
     if (!user) {
         return <p>Даних немає</p>; // Показываем, если пользователя не нашли
     }
+
 
     return (
         <div>
@@ -22,6 +23,9 @@ export const UserComponent: FC<UserComponentProps> = ({ user }) => {
             <p>Вік: {user.age}</p>
             <p>День народження: {user.birthDate}</p>
             <p>Email: {user.email}</p>
+            <ul >
+                <Link href={`/recipes?userId=${user.id}`}><li> рецепт </li></Link>
+                            </ul>
             <Link href="/users">Назад до списку користувачів</Link>
         </div>
     );

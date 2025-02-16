@@ -1,7 +1,6 @@
 import {FC} from "react";
 import Link from "next/link";
 import {IRecipe} from "@/models/recipe";
-import {BASE_URL} from "@/services/api.services";
 
 interface RecipeComponentProps {
     recipe: IRecipe | null;
@@ -10,7 +9,8 @@ interface RecipeComponentProps {
 export const RecipeComponent: FC<RecipeComponentProps> = ({ recipe }) => {
     if (!recipe) {
         return <p>Даних немає</p>; // Показываем, если пользователя не нашли
-    }    return (
+    }
+    return (
         <div>
 
                 <>
@@ -28,7 +28,7 @@ export const RecipeComponent: FC<RecipeComponentProps> = ({ recipe }) => {
                     <p>reviewCount:{recipe.reviewCount}</p>
                     <p>{recipe.mealType}</p>
                     <ul >
-                        <Link href={`${BASE_URL}/users/${recipe.userId}`} ><li>автор рецепта</li></Link>
+                        <Link href={`/users/${recipe.userId}`} ><li>автор рецепта</li></Link>
                     <Link href="/recipes">Назад до списку pецептів </Link>
                     </ul>
                 </>
