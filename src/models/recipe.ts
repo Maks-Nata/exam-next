@@ -1,12 +1,3 @@
-
-
-
-export type IBaceModelRecipes = {
-    title: string;
-    limit: number;
-    skip: number;
-    recipes: IRecipe[];
-};
 export interface IRecipe {
     id: number;
     name: string;

@@ -11,10 +11,8 @@ const limit = 10;
 export default async function RecipesComponent({ searchParams }: Props) {
     const page = Number(searchParams.page) || 1;
     const skip = (page - 1) * limit;
-
     const { recipes, total } = await getRecipes(limit, skip);
     const totalPages = Math.ceil(total / limit);
-
     return (
         <div>
             <h1>Список рецептів</h1>
@@ -22,6 +20,7 @@ export default async function RecipesComponent({ searchParams }: Props) {
                 <ul key={recipe.id}>
                  <Link href={`/recipes/${recipe.id}`} ><li>{recipe.name}</li></Link>
                     <img src={recipe.image} alt={recipe.name} width="100" />
+                    <li> {recipe.tags}</li>
                 </ul>
             ))}
             <div>

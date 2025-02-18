@@ -1,18 +1,19 @@
-import { getUserById } from "@/services/api.services";
-import { UserComponent } from "@/components/UserComponent";
+import { FC } from "react";
+import { getUserById, getRecipes } from "@/services/api.services";
+import {UserComponent} from "@/components/user-components/UserComponent";
+
+
 
 type Props = {
     params: { id: string };
 };
 
-const UserPage = async ({ params }: Props) => {
+const UserPage: FC<Props> = async ({ params }) => {
     const user = await getUserById(Number(params.id));
+    const allRecipes = await getRecipes();
+    const userRecipes = allRecipes.recipes.filter((recipe) => recipe.userId === user?.id);
 
-    return (
-        <div>
-            <UserComponent user={user} />
-        </div>
-    );
+    return <UserComponent user={user} recipes={userRecipes} />;
 };
 
 export default UserPage;

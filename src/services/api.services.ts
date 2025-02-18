@@ -19,11 +19,11 @@ export async function getRecipes(limit = 10, skip = 0): Promise<{ recipes: IReci
 
 export async function getUserById(id: number): Promise<IUser | null> {
     const response = await fetch(`${BASE_URL}/users/${id}`);
-    if (!response.ok) return null; // Если пользователь не найден, вернуть null
+    if (!response.ok) return null;
     return await response.json();
 }
 export async function getRecipeById(id: number): Promise<IRecipe | null> {
     const response = await fetch(`${BASE_URL}/recipes/${id}`);
-    if (!response.ok) return null; // Если рецепт не найден, вернуть null
+    if (!response.ok) return null;
     return await response.json();
 }

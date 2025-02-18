@@ -83,9 +83,3 @@ export interface IUser {
     recipe?:IRecipe;
 }
 
-export interface IbaceModelUsers {
-    users: IUser[];
-    total: number;
-    skip: number;
-    limit: number;
-}
