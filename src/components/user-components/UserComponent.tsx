@@ -16,18 +16,18 @@ export const UserComponent: FC<UserComponentProps> = ({ user, recipes }) => {
     const userRecipes = recipes.filter((recipe) => recipe.userId === user.id);
 
     return (
-        <div>
-            <h2>Більш детальна інформація о користувачеві</h2>
+        <div className="flex items-center justify-center flex-col h-screen bg-gray-100 gap-2">
+            <h2 className="text-3xl font-bold text-gray-800">Більш детальна інформація о користувачеві:</h2>
             <img src={user.image} alt={user.firstName} width="100" />
-            <p>Імя: {user.firstName}</p>
-            <p>Прізвище: {user.lastName}</p>
-            <p>По батькові: {user.maidenName}</p>
-            <p>Стать: {user.gender}</p>
-            <p>Вік: {user.age}</p>
-            <p>День народження: {user.birthDate}</p>
-            <p>Email: {user.email}</p>
+            <p className="text-xl ">Імя: {user.firstName}</p>
+            <p className="text-xl ">Прізвище: {user.lastName}</p>
+            <p className="text-xl ">По батькові: {user.maidenName}</p>
+            <p className="text-xl ">Стать: {user.gender}</p>
+            <p className="text-xl ">Вік: {user.age}</p>
+            <p className="text-xl ">День народження: {user.birthDate}</p>
+            <p className="text-xl ">Email: {user.email}</p>
 
-            <h3>Рецепти користувача:</h3>
+            <h3 className="text-orange-500 text-2xl font-semibold">Рецепти користувача:</h3>
             {userRecipes.length > 0 ? (
                 <ul>
                     {userRecipes.map((recipe) => (
@@ -37,10 +37,10 @@ export const UserComponent: FC<UserComponentProps> = ({ user, recipes }) => {
                     ))}
                 </ul>
             ) : (
-                <p>Немає опублікованого рецепту</p>
+                <p  className="text-xl ">Немає опублікованого рецепту</p>
             )}
 
-            <Link href="/users">Назад до списку користувачів</Link>
+            <Link  className="text-blue-500 " href="/users">Назад до списку користувачів</Link>
         </div>
     );
 };

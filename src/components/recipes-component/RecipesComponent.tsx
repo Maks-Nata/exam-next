@@ -14,28 +14,35 @@ export default async function RecipesComponent({ searchParams }: Props) {
     const { recipes, total } = await getRecipes(limit, skip);
     const totalPages = Math.ceil(total / limit);
     return (
-        <div>
-            <h1>Список рецептів</h1>
+        <div className="flex flex-wrap flex-col md:flex-row gap-4">
+            <h1 className="w-full text-3xl font-bold text-gray-800 text-center">Список рецептів:</h1>
             {recipes.map((recipe: IRecipe) => (
-                <ul key={recipe.id}>
-                 <Link href={`/recipes/${recipe.id}`} ><li>{recipe.name}</li></Link>
-                    <img src={recipe.image} alt={recipe.name} width="100" />
-                    <li> {recipe.tags}</li>
+                <ul className="flex items-center justify-start border p-4 w-full md:w-[48%]" key={recipe.id}>
+                    <div className="flex flex-col items-start justify-start space-y-4">
+                        <p>Натисніть назву рецепта.</p>
+                        <p>Ти дізнаєшся більш детальну інформацію.</p>
+                        <Link className="text-blue-500" href={`/recipes/${recipe.id}`}>
+                            <li>Назва рецепта: {recipe.name}</li>
+                        </Link>
+                        <li className="text-l">Теги:{recipe.tags}</li>
+                    </div>
+                    <img src={recipe.image} alt={recipe.name} width="250" />
                 </ul>
             ))}
-            <div>
+            <div className="w-full flex justify-between mt-4">
                 {page > 1 && (
                     <Link href={`/recipes?page=${page - 1}`}>
-                        <button> Попередня</button>
+                        <button className="px-4 py-2 bg-gray-200 rounded">Попередня</button>
                     </Link>
                 )}
                 {page < totalPages && (
                     <Link href={`/recipes?page=${page + 1}`}>
-                      <button>Наступна</button>
+                        <button className="px-4 py-2 bg-gray-200 rounded">Наступна</button>
                     </Link>
                 )}
             </div>
-            <p>Сторінка {page} з {totalPages}</p>
+            <p className="w-full text-center">Сторінка {page} з {totalPages}</p>
         </div>
+
     );
 }
