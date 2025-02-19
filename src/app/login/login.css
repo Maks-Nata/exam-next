@@ -1,0 +1,39 @@
+.login-container{
+margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://img.freepik.com/premium-photo/high-angle-view-vegetables-cutting-board_1048944-456145.jpg?ga=GA1.1.762472650.1739918238&semt=ais_hybrid");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.login-title{
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
+    color: white;
+
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vh;
+margin-top: 5vh;
+}
+.login-input{
+    width: 20vw;
+    height: 7vh;
+    border-radius: 12px;
+    border: solid 5px black;
+}
+.login-button{
+    width: 10vw;
+    height: 7vh;
+    border-radius: 12px;
+    border: solid 5px black;
+    background: white;
+}

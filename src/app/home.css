@@ -1,0 +1,48 @@
+ /*Стили для главной страницы */
+.home-container {
+    text-align: center;
+    padding: 50px;
+    height: 100vh;
+    background-image: url("https://img.freepik.com/free-photo/chicken-ceasar-salad-table_140725-701.jpg?semt=ais_hybrid");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.home-about{
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+}
+.home-history{
+    font-style: italic;
+    font-size: 20px;
+    text-align: start;
+}
+.home-title {
+    font-size: 38px;
+    font-style: italic;
+    color: #555;
+    margin: 10vh auto;
+}
+
+.home-description {
+    font-size: 24px;
+    color: #555;
+    margin: 10vh auto;
+}
+.home-button{
+   background: #ededed;
+    border-radius: 10px;
+    height: 5vh;
+    width: 7vw;
+}
+.home-text{
+
+    font-size: 24px;
+}
+.home-container-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}
