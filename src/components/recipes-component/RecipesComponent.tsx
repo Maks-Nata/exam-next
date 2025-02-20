@@ -16,12 +16,18 @@ export default async function RecipesComponent({ searchParams }: Props) {
     return (
         <div className="flex flex-wrap flex-col md:flex-row gap-4">
             <h1 className="w-full text-3xl font-bold text-gray-800 text-center">Список рецептів:</h1>
-            <div className="w-full text-center my-4">
+            <div className="w-full text-center my-4 flex justify-center space-x-4">
                 <Link href="/recipes/pakistani">
                     <button className="px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">
-                        Переглянути Pakistani рецепти
+                        Дивитися рецепти страв із Пакистану
                     </button>
                 </Link>
+                <Link href="/recipes/pasta">
+                    <button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
+                        Дивитися рецепти пасти
+                    </button>
+                </Link>
+
             </div>
             {recipes.map((recipe: IRecipe) => (
                 <ul className="flex items-center justify-start border p-4 w-full md:w-[48%]" key={recipe.id}>

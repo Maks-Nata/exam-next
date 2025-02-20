@@ -33,3 +33,9 @@ export async function getPakistaniRecipes(): Promise<IRecipe[]> {
     const data = await response.json();
     return data.recipes; //
 }
+export async function getPastaRecipes(): Promise<IRecipe[]> {
+    const response = await fetch(`${BASE_URL}/recipes/tag/Pasta`);
+    if (!response.ok) throw new Error("Не вдалося завантажити рецепти пасти");
+    const data = await response.json();
+    return data.recipes;
+}
