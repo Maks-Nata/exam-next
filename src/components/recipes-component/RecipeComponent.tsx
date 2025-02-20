@@ -10,7 +10,6 @@ export const RecipeComponent: FC<RecipeComponentProps> = ({ recipe }) => {
     if (!recipe) {
         return <p>Даних немає</p>;
     }
-
     return (
         <div className="flex items-center justify-center flex-col min-h-screen gap-2">
 

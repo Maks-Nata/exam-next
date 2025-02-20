@@ -27,3 +27,9 @@ export async function getRecipeById(id: number): Promise<IRecipe | null> {
     if (!response.ok) return null;
     return await response.json();
 }
+export async function getPakistaniRecipes(): Promise<IRecipe[]> {
+    const response = await fetch(`${BASE_URL}/recipes/tag/Pakistani`);
+    if (!response.ok) throw new Error("Не вдалося завантажити рецепти");
+    const data = await response.json();
+    return data.recipes; //
+}
